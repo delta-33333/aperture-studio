@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Studio — Aperture</title>
+  <link rel="stylesheet" href="/styles.css" />
+  <style>.hidden{display:none!important}.studio-head{padding:1.5rem 0 .5rem}.studio-head h1{font-size:1.75rem;margin-bottom:.35rem}</style>
+</head>
+<body>
+  <div class="wrap">
+    <nav class="nav">
+      <a class="logo" href="/">Aperture</a>
+      <div class="nav-links">
+        <a href="/">Accueil</a>
+        <a href="/#pricing">Prix</a>
+        <span class="badge">Studio live</span>
+      </div>
+    </nav>
+    <div class="studio-head">
+      <span class="pill">Marketing Studio · re-prompt · multi-réseaux</span>
+      <h1>Studio contenu</h1>
+      <p class="muted">URL ou perso → textes + brief vidéo 15&nbsp;s. Copiez, téléchargez, publiez.</p>
+    </div>
+    <div class="token-bar">
+      <span>Tokens : <strong id="tokenBalance">80</strong></span>
+      <span class="hint" style="margin:0">Plan Lab Founders</span>
+      <button class="btn ghost sm" type="button" id="btnResetTokens">Reset 80</button>
+    </div>
+    <div id="upsell" class="card hidden" style="border-color:var(--accent-dim);margin-bottom:1rem">
+      <h3 style="margin:0 0 .5rem">Tokens épuisés</h3>
+      <p class="muted">Pack Boost S 29€ ou Growth 149€/mois.</p>
+      <a class="btn sm" href="/#pricing">Voir les offres</a>
+    </div>
+    <div class="card">
+      <label for="website">URL du produit</label>
+      <div class="grid-2">
+        <input id="website" placeholder="https://votre-produit.com" />
+        <button class="btn secondary" type="button" id="btnScrape" style="height:42px;margin-bottom:.9rem">Lire l’URL</button>
+      </div>
+      <label for="name">Nom *</label>
+      <input id="name" placeholder="Ex. Nori" />
+      <label for="oneLiner">Une phrase *</label>
+      <input id="oneLiner" placeholder="Ce que vous vendez, à qui." />
+      <label for="description">Description</label>
+      <textarea id="description" placeholder="Offre, preuve."></textarea>
+      <div class="grid-2">
+        <div><label for="cta">CTA</label><input id="cta" value="En savoir plus" /></div>
+        <div>
+          <label>Réseaux</label>
+          <div class="checks">
+            <label><input type="checkbox" value="meta" checked /> Meta</label>
+            <label><input type="checkbox" value="tiktok" checked /> TikTok</label>
+            <label><input type="checkbox" value="linkedin" checked /> LinkedIn</label>
+            <label><input type="checkbox" value="x" /> X</label>
+            <label><input type="checkbox" value="youtube" /> Shorts</label>
+            <label><input type="checkbox" value="google" /> Google</label>
+          </div>
+        </div>
+      </div>
+      <div class="actions">
+        <button class="btn" type="button" id="btnGenerate">Générer le pack</button>
+        <button class="btn secondary" type="button" id="btnDownload">Télécharger (.txt)</button>
+      </div>
+    </div>
+    <div id="results" hidden style="margin-top:1rem"></div>
+    <footer class="footer"><span>Aperture Studio</span><a href="/">Retour</a></footer>
+  </div>
+  <div class="toast" id="toast">OK</div>
+  <script src="/studio.js"></script>
+</body>
+</html>
